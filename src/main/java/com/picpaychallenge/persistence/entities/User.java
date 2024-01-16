@@ -1,11 +1,9 @@
 package com.picpaychallenge.persistence.entities;
 
+import com.picpaychallenge.dtos.requests.UserRequest;
 import com.picpaychallenge.enums.UserType;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 
@@ -14,6 +12,7 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class User {
     @Id
@@ -36,4 +35,14 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private UserType userType;
+
+    public User(UserRequest userRequest) {
+        this.firstName = userRequest.firstName();
+        this.lastName = userRequest.lastName();
+        this.document = userRequest.document();
+        this.email = userRequest.email();
+        this.password = userRequest.password();
+        this.balance = userRequest.balance();
+        this.userType = userRequest.userType();
+    }
 }
