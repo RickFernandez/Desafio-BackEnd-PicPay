@@ -44,7 +44,7 @@ Temos 2 tipos de usuários, os comuns e lojistas, ambos têm carteira com dinhei
 | `email` | `string` | ´´ |
 | `password` | `string` | ´´ |
 | `balance` | `BigDecimal` | ´´ |
-| `userType` | `UserType` | O tipo do usuário deve ser 'COMMON' ou 'MERCHANT' |
+| `userType` | [`UserType`](https://github.com/RickFernandez/Desafio-BackEnd-PicPay/blob/main/src/main/java/com/picpaychallenge/enums/UserType.java) | Deve ser 'COMMON' ou 'MERCHANT' |
 
 #### Listar todos os usuários
 
