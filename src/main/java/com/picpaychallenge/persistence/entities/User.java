@@ -1,7 +1,7 @@
 package com.picpaychallenge.persistence.entities;
 
 import com.picpaychallenge.dtos.requests.UserRequest;
-import com.picpaychallenge.enums.UserType;
+import com.picpaychallenge.enums.UserTypeEnum;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -34,7 +34,7 @@ public class User {
     private BigDecimal balance;
 
     @Enumerated(EnumType.STRING)
-    private UserType userType;
+    private UserTypeEnum userType;
 
     public User(UserRequest userRequest) {
         this.firstName = userRequest.firstName();

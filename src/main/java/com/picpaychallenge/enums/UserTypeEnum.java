@@ -1,6 +1,6 @@
 package com.picpaychallenge.enums;
 
-public enum UserType {
+public enum UserTypeEnum {
     COMMON,
     MERCHANT
 }

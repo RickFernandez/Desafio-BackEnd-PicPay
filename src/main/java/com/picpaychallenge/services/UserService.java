@@ -1,7 +1,7 @@
 package com.picpaychallenge.services;
 
 import com.picpaychallenge.dtos.requests.UserRequest;
-import com.picpaychallenge.enums.UserType;
+import com.picpaychallenge.enums.UserTypeEnum;
 import com.picpaychallenge.persistence.entities.User;
 import com.picpaychallenge.persistence.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ public class UserService {
     private UserRepository repository;
 
     public void validateTransaction(User sender, BigDecimal amount) throws Exception{
-        if(sender.getUserType() == UserType.MERCHANT) {
+        if(sender.getUserType() == UserTypeEnum.MERCHANT) {
           throw new Exception("Usuário do tipo 'Logista' não está autorizado a realizar transações.");
         }
         if(sender.getBalance().compareTo(amount) < 0) {
