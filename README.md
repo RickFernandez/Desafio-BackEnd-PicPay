@@ -28,12 +28,12 @@ Temos 2 tipos de usuários, os comuns e lojistas, ambos têm carteira com dinhei
 - Este serviço deve ser RESTFul.
 
 
-## API Reference
+## Referências da API
 
 #### Cadastrar novo usuário
 
-```http
-  POST /users
+```
+  POST: /users
 ```
 
 | Parameter | Type     | Validações                |
@@ -48,12 +48,12 @@ Temos 2 tipos de usuários, os comuns e lojistas, ambos têm carteira com dinhei
 
 #### Listar todos os usuários
 
-```http
-  GET /users
+```
+  GET: /users
 ```
 #### Resposta:
 
-```json
+```
 [
 		"id": 1,
 		"firstName": "userName",
@@ -78,22 +78,14 @@ Temos 2 tipos de usuários, os comuns e lojistas, ambos têm carteira com dinhei
 
 #### Realizar uma transação
 
-```http
-  POST /transactions
+```
+  POST: /transactions
 ```
 | Parameter | Type     | Validações                |
 | :-------- | :------- | :------------------------- |
 | `senderId` | `Long` | **Obrigatório, Não pode ser Null** |
 | `receiverId` | `Long` | **Obrigatório, Não pode ser Null** |
 | `value` | `BigDecimal` | **Obrigatório, Não pode ser Null** |
-
-## Features
-
-- Ajustar o NotificationService;
-- ✅ Implementar validações nos dados de requisição da API; 
-- Implementar testes;
-- Verificar se há mais tratamentos de erros para implementar;
-
 
 ## 🛠 Skills
 Não foi exigido nenhuma skill específica para realizar o desafio, mas eu utilizei as seguintes:
@@ -108,5 +100,21 @@ Não foi exigido nenhuma skill específica para realizar o desafio, mas eu utili
 | Spring Data JPA | Para realizar a estrutura com o banco de dados | ´´ |
 | H2 Database | Utilizado como Banco de Dados local em memória | ´´ |
 
+## Instalação
+
+1. **Clone o repositório**
+```
+  git clone https://github.com/RickFernandez/Desafio-BackEnd-PicPay.git
+```
+2. **Abra o projeto na sua IDE de preferência (IntelliJ, Eclipse, VS Code)**
+
+3. **Vá ate o arquivo pom.xml e confira se as dependências do projeto foram instaladas com êxito (caso não, instale-as)**
+
+4. **Inicie a aplicação**
+
+5. **Pronto! Agora é só mandar as requisições para as URLs descritas na parte de 'Referências da API'**
+```
+  http://localhost:8080/{referência}
+```
 
 ### **Made By** [Henrique Fernandez](https://github.com/RickFernandez)
