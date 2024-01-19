@@ -46,6 +46,22 @@ Temos 2 tipos de usuários, os comuns e lojistas, ambos têm carteira com dinhei
 | `balance` | `BigDecimal` | **Obrigatório, Não pode ser Null** |
 | `userType` | [`UserType`](https://github.com/RickFernandez/Desafio-BackEnd-PicPay/blob/main/src/main/java/com/picpaychallenge/enums/UserType.java) | **Obrigatório, Não pode ser Null, Deve ser 'COMMON' ou 'MERCHANT'** |
 
+**Envio e resposta:**
+
+```
+{
+	"id": 1,
+	"firstName": "userName",
+	"lastName": "lastName",
+	"document": "document",
+	"email": "email@exemple.com",
+	"password": "password123",
+	"balance": 10.00,
+	"userType": "COMMON"
+}
+```
+
+
 #### Listar todos os usuários
 
 ```
@@ -55,6 +71,7 @@ Temos 2 tipos de usuários, os comuns e lojistas, ambos têm carteira com dinhei
 
 ```
 [
+	{
 		"id": 1,
 		"firstName": "userName",
 		"lastName": "lastName",
@@ -65,7 +82,7 @@ Temos 2 tipos de usuários, os comuns e lojistas, ambos têm carteira com dinhei
 		"userType": "COMMON"
 	},
 	{
-		"id": 3,
+		"id": 2,
 		"firstName": "userName",
 		"lastName": "lastName",
 		"document": "document",
@@ -73,6 +90,7 @@ Temos 2 tipos de usuários, os comuns e lojistas, ambos têm carteira com dinhei
 		"password": "password123",
 		"balance": 10.00,
 		"userType": "MERCHANT"
+	}
 ]
 ```
 
@@ -86,6 +104,44 @@ Temos 2 tipos de usuários, os comuns e lojistas, ambos têm carteira com dinhei
 | `senderId` | `Long` | **Obrigatório, Não pode ser Null** |
 | `receiverId` | `Long` | **Obrigatório, Não pode ser Null** |
 | `value` | `BigDecimal` | **Obrigatório, Não pode ser Null** |
+
+**Envio:**
+```
+{
+	"senderId": 1,
+	"receiverId": 2,
+	"value": 10
+}
+```
+
+**Resposta:**
+```
+{
+	"id": 1,
+	"amount": 10,
+	"sender": {
+		"id": 1,
+		"firstName": "firstName",
+		"lastName": "lastName",
+		"document": "132.456.789-11",
+		"email": "email@exemple.com",
+		"password": "senha123",
+		"balance": 0.00,
+		"userType": "COMMON"
+	},
+	"receiver": {
+		"id": 2,
+		"firstName": "firstName",
+		"lastName": "lastName",
+		"document": "132.456.789-12",
+		"email": "email@exemple.com",
+		"password": "senha123",
+		"balance": 20.00,
+		"userType": "MERCHANT"
+	},
+	"timeStamp": "2024-01-19T15:09:24.0241068"
+}
+```
 
 ## 🛠 Skills
 Não foi exigido nenhuma skill específica para realizar o desafio, mas eu utilizei as seguintes:
