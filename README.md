@@ -32,7 +32,7 @@ Temos 2 tipos de usuários, os comuns e lojistas, ambos têm carteira com dinhei
 
 #### Cadastrar novo usuário
 
-```
+```http
   POST: /users
 ```
 
@@ -48,7 +48,7 @@ Temos 2 tipos de usuários, os comuns e lojistas, ambos têm carteira com dinhei
 
 **Envio e resposta:**
 
-```
+```json
 {
 	"id": 1,
 	"firstName": "userName",
@@ -64,12 +64,12 @@ Temos 2 tipos de usuários, os comuns e lojistas, ambos têm carteira com dinhei
 
 #### Listar todos os usuários
 
-```
+```http
   GET: /users
 ```
 #### Resposta:
 
-```
+```json
 [
 	{
 		"id": 1,
@@ -96,7 +96,7 @@ Temos 2 tipos de usuários, os comuns e lojistas, ambos têm carteira com dinhei
 
 #### Realizar uma transação
 
-```
+```http
   POST: /transactions
 ```
 | Parameter | Type     | Validações                |
@@ -106,7 +106,7 @@ Temos 2 tipos de usuários, os comuns e lojistas, ambos têm carteira com dinhei
 | `value` | `BigDecimal` | **Obrigatório, Não pode ser Null** |
 
 **Envio:**
-```
+```json
 {
 	"senderId": 1,
 	"receiverId": 2,
@@ -115,7 +115,7 @@ Temos 2 tipos de usuários, os comuns e lojistas, ambos têm carteira com dinhei
 ```
 
 **Resposta:**
-```
+```json
 {
 	"id": 1,
 	"amount": 10,
