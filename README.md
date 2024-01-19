@@ -36,15 +36,15 @@ Temos 2 tipos de usuários, os comuns e lojistas, ambos têm carteira com dinhei
   POST /users
 ```
 
-| Parameter | Type     | Description                |
+| Parameter | Type     | Validações                |
 | :-------- | :------- | :------------------------- |
-| `firstName` | `string` | Ainda não foi implementado validações |
-| `lastName` | `string` | ´´ |
-| `document` | `string` | ´´ |
-| `email` | `string` | ´´ |
-| `password` | `string` | ´´ |
-| `balance` | `BigDecimal` | ´´ |
-| `userType` | [`UserType`](https://github.com/RickFernandez/Desafio-BackEnd-PicPay/blob/main/src/main/java/com/picpaychallenge/enums/UserType.java) | Deve ser 'COMMON' ou 'MERCHANT' |
+| `firstName` | `string` | **Obrigatório, NotBlank(Não pode ser null nem vazio)** |
+| `lastName` | `string` | **Obrigatório, NotBlank(Não pode ser null nem vazio)** |
+| `document` | `string` | **Obrigatório, NotBlank(Não pode ser null nem vazio), Deve seguir o padrão 123.456.789-12** |
+| `email` | `string` | **Obrigatório, NotBlank(Não pode ser null nem vazio), Email** |
+| `password` | `string` | **Obrigatório, NotBlank(Não pode ser null nem vazio), Min 8 caracteres** |
+| `balance` | `BigDecimal` | **Obrigatório, Não pode ser Null** |
+| `userType` | [`UserType`](https://github.com/RickFernandez/Desafio-BackEnd-PicPay/blob/main/src/main/java/com/picpaychallenge/enums/UserType.java) | **Obrigatório, Não pode ser Null, Deve ser 'COMMON' ou 'MERCHANT'** |
 
 #### Listar todos os usuários
 
@@ -81,16 +81,16 @@ Temos 2 tipos de usuários, os comuns e lojistas, ambos têm carteira com dinhei
 ```http
   POST /transactions
 ```
-| Parameter | Type     | Description                |
+| Parameter | Type     | Validações                |
 | :-------- | :------- | :------------------------- |
-| `senderId` | `Long` | Ainda não foi implementado validações |
-| `receiverId` | `Long` | ´´ |
-| `value` | `BigDecimal` | ´´ |
+| `senderId` | `Long` | **Obrigatório, Não pode ser Null** |
+| `receiverId` | `Long` | **Obrigatório, Não pode ser Null** |
+| `value` | `BigDecimal` | **Obrigatório, Não pode ser Null** |
 
 ## Features
 
 - Ajustar o NotificationService;
-- Implementar validações nos dados de requisição da API;
+- ✅ Implementar validações nos dados de requisição da API; 
 - Implementar testes;
 - Verificar se há mais tratamentos de erros para implementar;
 
