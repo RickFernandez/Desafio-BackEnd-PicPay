@@ -94,11 +94,12 @@ Não foi exigido nenhuma skill específica para realizar o desafio, mas eu utili
 | :-------- | :------- | :------------------------- |
 | Java 17 | Linguagem de programação  | [download](https://www.oracle.com/br/java/technologies/downloads/#java17) |
 | Maven | Gerenciador de dependências | Projeto criado com o [Spring Initializer](https://start.spring.io/) então as dependências Spring foram adicionadas na criação do projeto. |
-| Spring Boot | Para iniciar o projeto | ´´ |
-| Spring Web | Para criar os end-points | ´´ |
-| Lombok | Para facilitar e agilizar a codificação | ´´ |
-| Spring Data JPA | Para realizar a estrutura com o banco de dados | ´´ |
-| H2 Database | Utilizado como Banco de Dados local em memória | ´´ |
+| Spring Boot | Para iniciar o projeto | [Documentação](https://spring.io/projects/spring-boot/) |
+| Lombok | Para facilitar e agilizar a codificação | [Documentação](https://projectlombok.org/features/) |
+| Spring Data JPA | Para realizar a estrutura com o banco de dados | [Documentação](https://spring.io/projects/spring-data-jpa/) |
+| H2 Database | Utilizado como Banco de Dados local em memória | [Utilizando banco de dados H2 com Spring de forma rápida e simples](https://wpsilva.medium.com/utilizando-banco-de-dados-h2-com-spring-de-forma-r%C3%A1pida-e-simples-6d896e15a4af) |
+| JUnit5 | Utilizado para realizar testes unitártios | [Documentação](https://junit.org/junit5/) |
+| Mockito | Utilizado para mockar dados para os testes unitários | [Documentação](https://site.mockito.org/) |
 
 ## Instalação
 
